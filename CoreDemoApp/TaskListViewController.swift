@@ -52,7 +52,7 @@ class TaskListViewController: UITableViewController {
     }
     
     private func save(_ task: String) {
-        guard let newTask = storageManager.save(task) else { return }
+        guard let newTask = storageManager.add(task) else { return }
         taskList.append(newTask)
         
         let cellIndex = IndexPath(row: taskList.count - 1, section: 0)

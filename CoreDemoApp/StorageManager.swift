@@ -49,7 +49,7 @@ class StorageManager {
         return taskList
     }
     
-    func save(_ taskName: String) -> Task? {
+    func add(_ taskName: String) -> Task? {
         guard let entityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return nil }
         guard let task = NSManagedObject(entity: entityDescription, insertInto: context) as? Task else { return nil }
         task.title = taskName
